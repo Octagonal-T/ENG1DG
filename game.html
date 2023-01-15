@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>ENG1DG</title>
+</head>
+<body>
+  <canvas id="canvas" width="1500" height="500"></canvas><br>
+
+  <div id="log"></div>
+  <div id="pointsCounterContainer">Salamanchuk Points:<br><div id="pointsCounter">0</div></div>
+  <div id="togglePause" onclick="togglePauseAfterPoint()">Click to pause after every point</div>
+  <div id="info">esc to pause</div>
+
+</body>
+<script>
+  const canvas = document.getElementById('canvas');
+  const heightOfCanvas = canvas.clientHeight;
+  const ctx = canvas.getContext('2d');
+  const log = document.getElementById('log');
+  const togglePause = document.getElementById('togglePause');
+  let pointsCounter = document.getElementById('pointsCounter');
+  let logIncrement = 0;
+  let pausesAfterPoint = false;
+  let needsToBePaused = false;
+  let paused = false;
+  const winReasons = [
+    {d: "bought a cavalier king charles spaniel", p: 2},
+    {d: "knows the difference between analyzing and summarizing", p: 3},
+    {d: "knows the difference between metaphors and similies", p: 2},
+    {d: "labelled the characters to a short story correctly", p: 1},
+    {d: "clearly speaks during presentation", p: 2},
+    {d: "has one unique image per slide", p: 2},
+    {d: "participated in in-class romeo and juliet conversations", p: 1}
+    // {d: ""},
+  ];
+  const deathReasons = [
+    {d: "accidentally used happy dagger quote in essay", p: 3},
+    {d: "you'ren't supp'd to'se cont'ns in form' writ'g", p: 2},
+    {d: "you accidentally made supernatural beings<br>be the solution to your detective fiction story", p: 2},
+    {d: "accidentally said that first person was third person omniscient", p: 2},
+    {d: "mumbles quietly when giving presentation", p: 3},
+    {d: "no images on presentation, full of text", p: 3},
+    {d: "does not properly use PEE in an argument paragraph", p: 2}
+    // {d: ""},
+  ];
+  let internalCounter = 0;
+  const togglePauseAfterPoint = () => {
+    if(pausesAfterPoint){
+      pausesAfterPoint = false;
+      togglePause.innerHTML = 'Click to pause after every point';
+    }else{
+      pausesAfterPoint = true;
+      togglePause.innerHTML = 'Click to continue after every point';
+    }
+  }
+</script>
+<script src="coins.js"></script>
+<script src="spike.js"></script>
+<script src="game.js"></script>
+</html>

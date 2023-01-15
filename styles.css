@@ -1,0 +1,77 @@
+canvas{
+  /* position: fixed; */
+  z-index: -1;
+  border: 1px solid black;
+}
+
+body {
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  /* text-align: center; */
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+	display: none;
+}
+::-webkit-scrollbar-thumb {
+  background: darkgray; 
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: gray; 
+}
+/* #container{
+  display: flex;
+  flex: column;
+  height: 100%;
+} */
+#pointsCounterContainer{
+  font-family: Chalkduster, fantasy;
+  font-size: 25px;
+  text-align: center;
+  position: relative;
+}
+#pointsCounter{
+  font-size: 50px;
+}
+#log{
+  float: left;
+  border: 1px solid black;
+  margin-top: 10px;
+  width: 40%;
+  margin-right: -40%;
+  height: 150px;
+  overflow: auto;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-family: Andale Mono, monospace;
+}
+#log div{
+  display: inline-block;
+}
+#togglePause{
+  padding: 5px;
+  bottom: 3px;
+  position: absolute;
+  font-family: Andale Mono, monospace;
+  border: 1px solid black;
+  width: 23%;
+}
+#togglePause:hover{
+  cursor: pointer;
+}
+#info{
+  padding: 5px;
+  bottom: 3px;
+  position: absolute;
+  font-family: Andale Mono, monospace;
+  border: 1px solid black;
+  position: inline-block;
+  left: 25%;
+}
